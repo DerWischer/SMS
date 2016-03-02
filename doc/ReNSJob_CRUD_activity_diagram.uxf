@@ -560,15 +560,4 @@ bg=yellow</panel_attributes>
 chooses "send invoice"</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0;170.0;30.0;170.0;60.0</additional_attributes>
   </element>
-  <element>
-    <id>UMLState</id>
-    <coordinates>
-      <x>680</x>
-      <y>512</y>
-      <w>80</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>simulate check for available signal</panel_attributes>
-    <additional_attributes/>
-  </element>
 </diagram>
