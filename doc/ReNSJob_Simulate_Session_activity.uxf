@@ -5,7 +5,7 @@
     <id>UMLSpecialState</id>
     <coordinates>
       <x>535</x>
-      <y>65</y>
+      <y>0</y>
       <w>10</w>
       <h>10</h>
     </coordinates>
@@ -16,7 +16,7 @@
     <id>Relation</id>
     <coordinates>
       <x>535</x>
-      <y>70</y>
+      <y>5</y>
       <w>15</w>
       <h>30</h>
     </coordinates>
@@ -27,7 +27,7 @@
     <id>UMLState</id>
     <coordinates>
       <x>515</x>
-      <y>90</y>
+      <y>25</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -39,7 +39,7 @@ for user</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>535</x>
-      <y>105</y>
+      <y>40</y>
       <w>15</w>
       <h>35</h>
     </coordinates>
@@ -50,7 +50,7 @@ for user</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>530</x>
-      <y>170</y>
+      <y>180</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -62,33 +62,32 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>390</x>
-      <y>170</y>
+      <y>180</y>
       <w>150</w>
       <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 subscriber uses
-2G</panel_attributes>
+voice call</panel_attributes>
     <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>545</x>
-      <y>170</y>
-      <w>75</w>
-      <h>25</h>
+      <y>180</y>
+      <w>110</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-subscriber uses
-3G or 4G</panel_attributes>
-    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+r2=subscriber uses data session</panel_attributes>
+    <additional_attributes>180.0;60.0;180.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLObject</id>
     <coordinates>
       <x>600</x>
-      <y>90</y>
+      <y>25</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -100,7 +99,7 @@ subscriber</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>560</x>
-      <y>95</y>
+      <y>30</y>
       <w>50</w>
       <h>15</h>
     </coordinates>
@@ -111,7 +110,7 @@ subscriber</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>610</x>
-      <y>200</y>
+      <y>210</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -123,7 +122,7 @@ signal quality</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>545</x>
-      <y>200</y>
+      <y>210</y>
       <w>75</w>
       <h>20</h>
     </coordinates>
@@ -135,7 +134,7 @@ signal quality</panel_attributes>
     <id>UMLObject</id>
     <coordinates>
       <x>680</x>
-      <y>200</y>
+      <y>210</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -146,7 +145,7 @@ signal quality</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>655</x>
-      <y>205</y>
+      <y>215</y>
       <w>35</w>
       <h>15</h>
     </coordinates>
@@ -156,8 +155,8 @@ signal quality</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>610</x>
-      <y>170</y>
+      <x>515</x>
+      <y>105</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -168,8 +167,8 @@ service type</panel_attributes>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>680</x>
-      <y>170</y>
+      <x>600</x>
+      <y>105</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -179,30 +178,30 @@ service type</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>655</x>
-      <y>175</y>
-      <w>35</w>
+      <x>560</x>
+      <y>110</y>
+      <w>50</w>
       <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>185</y>
+      <x>535</x>
+      <y>120</y>
       <w>15</w>
-      <h>25</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
       <x>515</x>
-      <y>130</y>
+      <y>65</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -214,7 +213,7 @@ session time</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>535</x>
-      <y>145</y>
+      <y>80</y>
       <w>15</w>
       <h>35</h>
     </coordinates>
@@ -225,7 +224,7 @@ session time</panel_attributes>
     <id>UMLObject</id>
     <coordinates>
       <x>600</x>
-      <y>130</y>
+      <y>65</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -237,7 +236,7 @@ time</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>560</x>
-      <y>135</y>
+      <y>70</y>
       <w>50</w>
       <h>15</h>
     </coordinates>
@@ -248,7 +247,7 @@ time</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>690</x>
-      <y>235</y>
+      <y>245</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -260,7 +259,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>695</x>
-      <y>250</y>
+      <y>260</y>
       <w>65</w>
       <h>35</h>
     </coordinates>
@@ -273,7 +272,7 @@ subscriber uses
     <id>Relation</id>
     <coordinates>
       <x>705</x>
-      <y>240</y>
+      <y>250</y>
       <w>135</w>
       <h>45</h>
     </coordinates>
@@ -286,7 +285,7 @@ subscriber uses
     <id>UMLState</id>
     <coordinates>
       <x>665</x>
-      <y>275</y>
+      <y>285</y>
       <w>65</w>
       <h>20</h>
     </coordinates>
@@ -298,7 +297,7 @@ throughput</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>745</x>
-      <y>275</y>
+      <y>285</y>
       <w>65</w>
       <h>20</h>
     </coordinates>
@@ -310,7 +309,7 @@ throughput</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>695</x>
-      <y>290</y>
+      <y>300</y>
       <w>15</w>
       <h>30</h>
     </coordinates>
@@ -321,7 +320,7 @@ throughput</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>690</x>
-      <y>310</y>
+      <y>320</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -333,7 +332,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>705</x>
-      <y>290</y>
+      <y>300</y>
       <w>85</w>
       <h>40</h>
     </coordinates>
@@ -344,7 +343,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>545</x>
-      <y>310</y>
+      <y>320</y>
       <w>155</w>
       <h>25</h>
     </coordinates>
@@ -357,7 +356,7 @@ lower needed throughput</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>695</x>
-      <y>325</y>
+      <y>335</y>
       <w>95</w>
       <h>45</h>
     </coordinates>
@@ -370,7 +369,7 @@ greater needed throughput</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>295</x>
-      <y>490</y>
+      <y>500</y>
       <w>215</w>
       <h>40</h>
     </coordinates>
@@ -383,7 +382,7 @@ left</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>230</x>
-      <y>505</y>
+      <y>515</y>
       <w>70</w>
       <h>20</h>
     </coordinates>
@@ -395,7 +394,7 @@ data volume</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>470</x>
-      <y>395</y>
+      <y>405</y>
       <w>60</w>
       <h>20</h>
     </coordinates>
@@ -407,7 +406,7 @@ subscription type</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>495</x>
-      <y>410</y>
+      <y>420</y>
       <w>15</w>
       <h>35</h>
     </coordinates>
@@ -418,7 +417,7 @@ subscription type</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>470</x>
-      <y>435</y>
+      <y>445</y>
       <w>60</w>
       <h>20</h>
     </coordinates>
@@ -430,7 +429,7 @@ data volume</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>495</x>
-      <y>450</y>
+      <y>460</y>
       <w>15</w>
       <h>35</h>
     </coordinates>
@@ -441,7 +440,7 @@ data volume</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>335</x>
-      <y>170</y>
+      <y>180</y>
       <w>60</w>
       <h>20</h>
     </coordinates>
@@ -453,7 +452,7 @@ subscription type</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>490</x>
-      <y>475</y>
+      <y>485</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -465,7 +464,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>365</x>
-      <y>475</y>
+      <y>485</y>
       <w>135</w>
       <h>25</h>
     </coordinates>
@@ -478,7 +477,7 @@ volume left</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>300</x>
-      <y>475</y>
+      <y>485</y>
       <w>70</w>
       <h>20</h>
     </coordinates>
@@ -490,7 +489,7 @@ session time</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>330</x>
-      <y>455</y>
+      <y>465</y>
       <w>15</w>
       <h>30</h>
     </coordinates>
@@ -501,7 +500,7 @@ session time</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>300</x>
-      <y>440</y>
+      <y>450</y>
       <w>70</w>
       <h>20</h>
     </coordinates>
@@ -513,7 +512,7 @@ data volume</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>330</x>
-      <y>380</y>
+      <y>390</y>
       <w>45</w>
       <h>70</h>
     </coordinates>
@@ -524,7 +523,7 @@ data volume</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>335</x>
-      <y>245</y>
+      <y>255</y>
       <w>60</w>
       <h>20</h>
     </coordinates>
@@ -536,7 +535,7 @@ minutes</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>360</x>
-      <y>185</y>
+      <y>195</y>
       <w>15</w>
       <h>70</h>
     </coordinates>
@@ -547,7 +546,7 @@ minutes</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>360</x>
-      <y>260</y>
+      <y>270</y>
       <w>15</w>
       <h>45</h>
     </coordinates>
@@ -558,7 +557,7 @@ minutes</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>355</x>
-      <y>295</y>
+      <y>305</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -571,7 +570,7 @@ bg=green
     <id>Relation</id>
     <coordinates>
       <x>290</x>
-      <y>300</y>
+      <y>310</y>
       <w>75</w>
       <h>35</h>
     </coordinates>
@@ -584,7 +583,7 @@ free minutes</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>360</x>
-      <y>310</y>
+      <y>320</y>
       <w>50</w>
       <h>65</h>
     </coordinates>
@@ -597,7 +596,7 @@ free minutes</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>90</x>
-      <y>370</y>
+      <y>380</y>
       <w>10</w>
       <h>10</h>
     </coordinates>
@@ -608,7 +607,7 @@ free minutes</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>255</x>
-      <y>325</y>
+      <y>335</y>
       <w>80</w>
       <h>20</h>
     </coordinates>
@@ -620,7 +619,7 @@ extra minutes * price</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>260</x>
-      <y>340</y>
+      <y>350</y>
       <w>45</w>
       <h>35</h>
     </coordinates>
@@ -631,7 +630,7 @@ extra minutes * price</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>655</x>
-      <y>360</y>
+      <y>370</y>
       <w>95</w>
       <h>20</h>
     </coordinates>
@@ -643,7 +642,7 @@ extra minutes * price</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>455</x>
-      <y>310</y>
+      <y>320</y>
       <w>95</w>
       <h>20</h>
     </coordinates>
@@ -655,7 +654,7 @@ extra minutes * price</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>495</x>
-      <y>325</y>
+      <y>335</y>
       <w>15</w>
       <h>45</h>
     </coordinates>
@@ -666,7 +665,7 @@ extra minutes * price</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>505</x>
-      <y>365</y>
+      <y>375</y>
       <w>160</w>
       <h>15</h>
     </coordinates>
@@ -677,7 +676,7 @@ extra minutes * price</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>260</x>
-      <y>380</y>
+      <y>390</y>
       <w>15</w>
       <h>135</h>
     </coordinates>
@@ -688,7 +687,7 @@ extra minutes * price</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>115</x>
-      <y>365</y>
+      <y>375</y>
       <w>50</w>
       <h>20</h>
     </coordinates>
@@ -700,7 +699,7 @@ information</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>255</x>
-      <y>365</y>
+      <y>375</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -712,7 +711,7 @@ bg=yellow</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>355</x>
-      <y>365</y>
+      <y>375</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -724,7 +723,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>270</x>
-      <y>370</y>
+      <y>380</y>
       <w>95</w>
       <h>15</h>
     </coordinates>
@@ -735,7 +734,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>240</x>
-      <y>370</y>
+      <y>380</y>
       <w>25</w>
       <h>15</h>
     </coordinates>
@@ -746,7 +745,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>95</x>
-      <y>370</y>
+      <y>380</y>
       <w>30</w>
       <h>15</h>
     </coordinates>
@@ -757,7 +756,7 @@ bg=yellow</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>185</x>
-      <y>365</y>
+      <y>375</y>
       <w>60</w>
       <h>20</h>
     </coordinates>
@@ -769,7 +768,7 @@ state</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>160</x>
-      <y>370</y>
+      <y>380</y>
       <w>35</w>
       <h>15</h>
     </coordinates>
@@ -780,7 +779,7 @@ state</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>490</x>
-      <y>360</y>
+      <y>370</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -792,7 +791,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>495</x>
-      <y>375</y>
+      <y>385</y>
       <w>15</w>
       <h>30</h>
     </coordinates>
@@ -803,7 +802,7 @@ bg=yellow</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>530</x>
-      <y>200</y>
+      <y>210</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -815,7 +814,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>535</x>
-      <y>215</y>
+      <y>225</y>
       <w>165</w>
       <h>40</h>
     </coordinates>
@@ -827,7 +826,7 @@ signal available</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>370</x>
-      <y>205</y>
+      <y>215</y>
       <w>170</w>
       <h>180</h>
     </coordinates>
