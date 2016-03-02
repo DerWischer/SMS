@@ -18,7 +18,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="379.75" width="578.3333333333334" x="-608.2945591605894" y="279.63775347447313"/>
+          <y:Geometry height="387.7075637149028" width="578.3333333333334" x="-608.2945591605894" y="279.63775347447313"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="71.91357421875" x="253.20987955729169" y="3.0">Subscriber<y:LabelModel>
@@ -36,12 +36,13 @@
 -subscriptionType: SubscriptionType</y:AttributeLabel>
             <y:MethodLabel>+Subscriber(forename, surname, imsi : String, terminal: TerminalType, subscription: SubscriptionType)
 
-+getForname(): String
++getForename(): String
 +getSurname(): String
 
 +setForname(name: String): void
 +setSurname(name: String): void
 
++getFullBane(): String
 +getIMSI(): String
 
 +getTerminalType(): TerminalType
@@ -90,7 +91,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="108.03629432739058" width="185.9375" x="-1292.8458430012495" y="782.1592283529172"/>
+          <y:Geometry height="108.03629432739058" width="185.9375" x="-1356.8160761602978" y="663.4376527748263"/>
           <y:Fill color="#ED8B03" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="88.525390625" x="48.7060546875" y="26.701171875">TerminalType<y:LabelModel>
@@ -113,7 +114,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="353.99839222042135" width="276.25" x="-319.00223561588336" y="-135.07747163695302"/>
+          <y:Geometry height="306.34395351631764" width="276.25" x="-319.00223561588336" y="-135.07747163695302"/>
           <y:Fill color="#B03060" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="113.7890625" x="81.23046875" y="26.701171875">SubscriptionType<y:LabelModel>
@@ -131,16 +132,13 @@
 -usedExtraMinutes: int</y:AttributeLabel>
             <y:MethodLabel>+getFreeMinutes(): int
 +getDataVolumeInMBits(): int
++getUsedExtraMinutes(): int
 
 +consumeMinutes(minutes: int): void
 +consumeDataVolume(volumeInMBits: int): void
 
 +invoice(): double
 +toString(): String
-
--getBasicFee(): double
--getPriceForExtraMinutes(): double
--getUsedExtraMinutes(): int
 
 #resetAttributes(): void</y:MethodLabel>
           </y:UML>
@@ -151,7 +149,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="164.5625" width="509.1999999999998" x="-1252.461864497231" y="948.1350812803885"/>
+          <y:Geometry height="164.5625" width="509.1999999999998" x="-1198.4476983821246" y="948.1350812803885"/>
           <y:Fill color="#02B8BE" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="103.658203125" x="202.7708984374999" y="26.701171875">RANInformation<y:LabelModel>
@@ -174,7 +172,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="121.3360129659643" width="133.14371751418128" x="-808.5549641021738" y="1299.8069551154772"/>
+          <y:Geometry height="121.3360129659643" width="133.14371751418128" x="-1052.796732876721" y="1142.6975812803885"/>
           <y:Fill color="#ED8B03" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="80.603515625" x="26.270100944590638" y="26.701171875">ServiceType<y:LabelModel>
@@ -198,10 +196,10 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="139.25000000000003" width="693.3333333333334" x="86.20811010536488" y="305.8773358995137"/>
+          <y:Geometry height="139.25000000000003" width="617.8430525557955" x="15.552208827467382" y="306.3894752836303"/>
           <y:Fill color="#02B8BE" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="118.87353515625" x="287.2298990885417" y="26.701171875">SubscriberFactory<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="118.87353515625" x="249.48475869977273" y="26.701171875">SubscriberFactory<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -237,7 +235,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="106.75" width="237.5" x="-437.8778924939227" y="1233.1372510534839"/>
+          <y:Geometry height="106.75" width="237.5" x="-309.1003546969465" y="1097.3671614787413"/>
           <y:Fill color="#02B8BE" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="43.00634765625" x="97.246826171875" y="26.701171875">Signal<y:LabelModel>
@@ -258,7 +256,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="54.25" width="218.75" x="-577.9694084109947" y="1169.4960333468387"/>
+          <y:Geometry height="54.25" width="218.75" x="-278.22858767665355" y="1219.7333108022635"/>
           <y:Fill color="#BAFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="186.771484375" x="15.9892578125" y="17.7744140625">Generates a random signal quality<y:LabelModel>
@@ -275,10 +273,10 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="139.25000000000003" width="217.1875" x="45.96606655017547" y="464.38598966774697"/>
+          <y:Geometry height="172.21704967602594" width="396.8010809935205" x="15.552208827467382" y="475.6394752836304"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="48.79541015625" x="84.196044921875" y="3.0">Invoice<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="48.79541015625" x="174.00283541863524" y="3.0">Invoice<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -287,8 +285,10 @@
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>-subscriber: Subscriber
-</y:AttributeLabel>
-            <y:MethodLabel>+getSubscriberName(): String
+-usedExtraMinutes: int
+-charges: double</y:AttributeLabel>
+            <y:MethodLabel>+Invoice(subscriber: Subscriber, usedExtraMinutes: int, charges: double)
++getSubscriberName(): String
 +getCharges(): double
 +getUsedExtraMinutes(): int
 +getSubscriptionType(): String
@@ -364,11 +364,12 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="55.2" width="367.19999999999993" x="-171.57723561588304" y="-204.777471636953"/>
+          <y:Geometry height="55.2" width="419.0378436285097" x="-342.551176004652" y="-227.51336796524674"/>
           <y:Fill color="#BAFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="341.4765625" x="12.861718749999966" y="10.898828125000009">- Subclasses implement resetAtrribtues-Method 
-- Subclasses call restetAttributes-Method in Default Constructor<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="48.103515625" modelName="custom" textColor="#000000" visible="true" width="405.53125" x="6.753296814254838" y="3.5482421874999943">- Subclasses implement resetAtrribtues-Method 
+- Subclasses call restetAttributes-Method in Default Constructor
+-Invoice-Method invoke resetAttributes-Method after calculations of charges<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -382,7 +383,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="117.6875" width="185.9375" x="-141.90520698608907" y="1184.503458711507"/>
+          <y:Geometry height="117.6875" width="185.9375" x="-41.60035469694651" y="1072.2179046920553"/>
           <y:Fill color="#ED8B03" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="117.41357421875" x="34.261962890625" y="26.701171875">SignalQualityType<y:LabelModel>
@@ -406,7 +407,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="103.0" width="115.5" x="-1468.399364497231" y="978.9163312803884"/>
+          <y:Geometry height="103.0" width="115.5" x="-1343.9476983821246" y="948.1350812803885"/>
           <y:Fill color="#ED8B03" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="105.11181640625" x="5.194091796875" y="26.701171875">RANTechnology<y:LabelModel>
@@ -430,7 +431,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="108.03629432739058" width="385.20505171191223" x="-1060.6162982999049" y="1170.637139880469"/>
+          <y:Geometry height="108.03629432739058" width="385.20505171191223" x="-889.6530153625399" y="1192.8401636385684"/>
           <y:Fill color="#02B8BE" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="121.75537109375" x="131.72484030908112" y="26.701171875">ServiceInformation<y:LabelModel>
@@ -452,7 +453,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="95.44857309562394" width="446.3586573419774" x="-1769.204500343227" y="804.3254260838734"/>
+          <y:Geometry height="95.44857309562394" width="446.3586573419774" x="-1272.4445858795204" y="789.8772038853914"/>
           <y:Fill color="#02B8BE" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="129.67724609375" x="158.3407056241137" y="26.701171875">TerminalInformation<y:LabelModel>
@@ -471,10 +472,9 @@
     </node>
     <node id="n19">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLNoteNode>
-          <y:Geometry height="150.8640674230146" width="402.7269290113453" x="-1041.0214881719346" y="677.4744912479739"/>
+          <y:Geometry height="150.8640674230146" width="402.7269290113453" x="-1078.138175599338" y="464.32546317022025"/>
           <y:Fill color="#BAFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" modelName="custom" textColor="#000000" visible="true" width="401.517578125" x="0.6046754431727095" y="36.6791040240073">Simulate-Method: Calculates charges for specified subscriber and service. 
@@ -493,13 +493,12 @@ subscriber-attribute
     </node>
     <node id="n20">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="139.25" width="462.259002917342" x="185.17562424636995" y="808.1407244732576"/>
+          <y:Geometry height="164.2994514038877" width="540.0510277365686" x="93.34423364669408" y="763.7346769570588"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="125.37353515625" x="168.442733880546" y="3.0">SubscriberManager<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="125.37353515625" x="207.3387462901593" y="3.0">SubscriberManager<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -512,7 +511,10 @@ subscriber-attribute
 +removeSubscriber(subscriber: Subscriber): void
 
 +simulateSession(subscriber: Subscriber, serviceType: ServiceType, timeInMillis: long): void
-+invoiceAllSubscribers(): List&lt;Invoice&gt;</y:MethodLabel>
++simulateDays(amountOfDays: int)
+
++invoiceAllSubscribers(): List&lt;Invoice&gt;
++invoiceAndRemoveSubscriber(subscriber: Subscriber): Invoice</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -604,7 +606,7 @@ subscriber-attribute
       <data key="d8"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="-17.122704945595842" sy="27.57024708193606" tx="30.722276479890354" ty="-153.16936916016678"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -635,7 +637,6 @@ subscriber-attribute
     </edge>
     <edge id="e11" source="n17" target="n5">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -647,7 +648,6 @@ subscriber-attribute
     </edge>
     <edge id="e12" source="n18" target="n2">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -659,7 +659,6 @@ subscriber-attribute
     </edge>
     <edge id="e13" source="n1" target="n0">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -671,7 +670,6 @@ subscriber-attribute
     </edge>
     <edge id="e14" source="n18" target="n16">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -683,7 +681,6 @@ subscriber-attribute
     </edge>
     <edge id="e15" source="n1" target="n4">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -695,7 +692,6 @@ subscriber-attribute
     </edge>
     <edge id="e16" source="n1" target="n17">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="75.95435746826615" ty="-36.869614294989105"/>
@@ -707,7 +703,6 @@ subscriber-attribute
     </edge>
     <edge id="e17" source="n1" target="n8">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="6.569598701051177" ty="-18.775281596446575"/>
@@ -719,7 +714,6 @@ subscriber-attribute
     </edge>
     <edge id="e18" source="n19" target="n1">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-294.99771144849933" ty="-15.973788095659074">
@@ -733,7 +727,6 @@ subscriber-attribute
     </edge>
     <edge id="e19" source="n20" target="n0">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -745,7 +738,6 @@ subscriber-attribute
     </edge>
     <edge id="e20" source="n20" target="n1">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -757,10 +749,24 @@ subscriber-attribute
     </edge>
     <edge id="e21" source="n20" target="n10">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="none"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e22" source="n14" target="n3">
+      <data key="d8"/>
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-209.5556342579096" sy="12.340381356174788" tx="-138.1126876012852" ty="95.0685216009945">
+            <y:Point x="-348.97071274298054" y="-187.57298660907196"/>
+            <y:Point x="-348.97071274298054" y="113.1630267222003"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
