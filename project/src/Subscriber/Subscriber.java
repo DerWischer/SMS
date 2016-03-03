@@ -3,7 +3,6 @@ package Subscriber;
 import InformationProvider.Terminal.TerminalType;
 import SubscriptionType.SubscriptionType;
 import common.Invoice;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Subscriber {
 	private String forename, surname, imsi;
@@ -56,7 +55,14 @@ public class Subscriber {
 	
 	public Invoice invoice(){
 		//TODO generate an invoice
-		// NOTE: Attribute in SubscriptionType are reset to default after invoking Invoice. Therefore store Attributes BEFORE invoking !!! 
-		throw new NotImplementedException();
+		
+		/* NOTE: Attribute in SubscriptionType are reset to default after invoking 
+		 * Invoice. Therefore store Attributes BEFORE invoking !!!
+		 */
+		
+		int usedExtraMintes = getSubscriptionType().getUsedExtraMinutes();
+		double charges = getSubscriptionType().invoice();
+		Invoice invoice = new Invoice(this, usedExtraMintes, charges);
+		return invoice;
 	}
 }

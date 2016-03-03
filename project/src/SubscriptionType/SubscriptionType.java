@@ -1,6 +1,6 @@
 package SubscriptionType;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import exception.NoDataVolumeException;
 
 public abstract class SubscriptionType {
 	protected double basicFee;
@@ -26,10 +26,26 @@ public abstract class SubscriptionType {
 	}
 	
 	public void consumeMinutes(int minutes){
-		//TODO subtract from freeMinutes, or add to usedExtraMinutes
-		throw new NotImplementedException();
+		freeMinutes -= minutes;
+		
+		if (freeMinutes < 0){
+			usedExtraMinutes += Math.abs(freeMinutes);
+			freeMinutes = 0;
+		}		
 	}
 	
+	public void consumeDataVolume(int mbits) throws NoDataVolumeException{
+		dataVolumeInMBits -= mbits;
+		
+		if (dataVolumeInMBits < 0) {
+			dataVolumeInMBits = 0;
+			throw new NoDataVolumeException();
+		}
+	}
+	
+	/**
+	 * Returns the charges and resets all attributes to default
+	 */
 	public double invoice(){
 		double charge = basicFee + usedExtraMinutes * priceForExtraMinutes;
 		resetAttributes();

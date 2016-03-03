@@ -1,22 +1,26 @@
 package Subscriber;
 
+import java.security.InvalidParameterException;
 import java.util.Random;
 
 import InformationProvider.Terminal.TerminalType;
 import SubscriptionType.SubscriptionType;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class SubscriberFactory {
 	private static Random r = new Random();
 	
-	private static String generateIMSI() {
-		// TODO generate a unique 10 digit long number 
-		throw new NotImplementedException();		
+	private SubscriberFactory() {}
+	
+	private static String generateIMSI() {	
+		long number = (long) Math.floor(r.nextDouble() * 9000000000L) + 1000000000L;
+		return "" + number;		
 	}
 	
 	static public Subscriber createSubsriber(String forename, String surname, TerminalType terminal, SubscriptionType subscription) {
 		String imsi = generateIMSI();
-		// TODO validate data
+		if (forename.length() == 0 || surname.length() == 0 || surname == null || terminal == null) {
+			throw new InvalidParameterException();
+		}
 		return new Subscriber(forename, surname, imsi, terminal, subscription);		
 	}
 }

@@ -1,13 +1,13 @@
 package SubscriptionType;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 public class GreenMobileL extends SubscriptionType {
 
 	@Override
 	protected void resetAttributes() {
-		// TODO Auto-generated method stub
-		throw new NotImplementedException();
+		basicFee = 42;
+		freeMinutes = 150;
+		priceForExtraMinutes = 0.04;
+		dataVolumeInMBits = 40000;
 	}
 
 }

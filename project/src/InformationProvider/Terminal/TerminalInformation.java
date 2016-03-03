@@ -3,13 +3,28 @@ package InformationProvider.Terminal;
 import java.util.ArrayList;
 
 import InformationProvider.RAN.RANTechnology;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class TerminalInformation {
 
 	static public ArrayList<RANTechnology> getSupportedRANTechnology(TerminalType terminal){
-		// TODO determine RANTechnologies that are supported by the specified terminal/phone
-		throw new NotImplementedException();		
+		ArrayList<RANTechnology> ranList = new ArrayList<>();
+		switch (terminal) {
+		case PearaPhone4s:
+			ranList.add(RANTechnology.GSM);
+			ranList.add(RANTechnology.HSPA);
+			break;
+		case PhairPhone:
+			ranList.add(RANTechnology.GSM);
+			ranList.add(RANTechnology.HSPA);
+			break;
+		case SoniZperiaX3:
+			ranList.add(RANTechnology.GSM);
+			ranList.add(RANTechnology.HSPA);
+			ranList.add(RANTechnology.LTE);
+			break;
+		default:			
+			break;
+		}
+		return ranList;
 	}
-	
 }
