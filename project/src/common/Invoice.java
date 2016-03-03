@@ -30,4 +30,8 @@ public class Invoice {
 		return subscriber.getSubscriptionType().toString();
 	}
 	
+	public String getIMSI() {
+		return subscriber.getIMSI();
+	}
+	
 }
