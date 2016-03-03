@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import InformationProvider.SessionInformation;
 import InformationProvider.Service.ServiceType;
 import Subscriber.Subscriber;
@@ -14,8 +17,10 @@ import exception.NoSignalException;
 import exception.NoSupportedRanTechnologyException;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+@XmlRootElement
 public class SubscriberManager {
-
+	
+	@XmlElement
 	private ArrayList<Subscriber> subscriberList;
 	private Date date;
 	private int amountofDays;
@@ -74,21 +79,17 @@ public class SubscriberManager {
 		String strSubscription = session.getSubscriptionType().toString();
 		String strTerminal = session.getUserTerminal().name();
 		String strTime = "" + session.getTimeInSecons();
-		String strSignal = "" + session.getSignal();
-
-		System.out.println("Vol " + subscriber.getSubscriptionType().getDataVolumeInMBits());
-		System.out.println("Free " + subscriber.getSubscriptionType().getFreeMinutes());
-		System.out.println("Used " + subscriber.getSubscriptionType().getUsedExtraMinutes());
-
+		String strSignal = "" + session.getSignal();		
 		SessionInformation sessionInfo = new SessionInformation(strName, strService, strSignal, strSubscription,
 				strTerminal, strTime, info);
+		
 		return sessionInfo;
 	}
 
 	public ArrayList<Invoice> simulateDays(int amountOfDays) {
 		// TODO validate amountOfDays and simulate
-		
-		if(amountOfDays < 1){
+
+		throw new NotImplementedException();	if(amountOfDays < 1){
 			throw new IllegalArgumentException("The amount of simulated days has to be greater than 0.");
 		}
 
@@ -112,8 +113,7 @@ public class SubscriberManager {
 			}
 			date = c.getTime();
 		}
-		return invoiceArr;
-	}
+		return invoiceArr;	}
 
 	public ArrayList<Invoice> invoiceAllSubscriber(Date date) {
 		ArrayList<Invoice> invoiceList = new ArrayList<>();

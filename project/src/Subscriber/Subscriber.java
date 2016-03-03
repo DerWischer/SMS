@@ -1,15 +1,20 @@
 package Subscriber;
 
-import java.util.Calendar;
-import java.util.Date;
-
-import InformationProvider.Terminal.TerminalType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;import java.util.Calendar;
+import java.util.Date;import InformationProvider.Terminal.TerminalType;
 import SubscriptionType.SubscriptionType;
 import common.Invoice;
 
+@XmlRootElement
 public class Subscriber {
-	private String forename, surname, imsi;
+	
+	private String forename;	
+	private String surname;
+	private String imsi;
 	private TerminalType terminal;
+	@XmlElement
 	private SubscriptionType subscription;
 	private Date subscriptionDate;
 	
@@ -22,6 +27,11 @@ public class Subscriber {
 		this.subscriptionDate = subscriptionDate;
 	}
 	
+	public Subscriber() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@XmlAttribute
 	public String getForename() {
 		return forename;
 	}
@@ -30,6 +40,7 @@ public class Subscriber {
 		this.forename = name;
 	}
 	
+	@XmlAttribute
 	public String getSurname() {
 		return surname;
 	}
@@ -38,22 +49,29 @@ public class Subscriber {
 		this.surname = name;
 	}
 	
+	@XmlAttribute
 	public String getFullName() {
 		return getForename() + " " + getSurname();
 	}
 	
+	@XmlAttribute
 	public String getIMSI() {
 		return imsi;
 	}
 	
+	private void setIMSI(String imsi) {
+		this.imsi = imsi;
+	}
+	
+	@XmlAttribute
 	public TerminalType getTerminalType(){
 		return terminal;
 	}
 	
-	public void setTerminType(TerminalType type){
+	public void setTerminalType(TerminalType type){
 		this.terminal = type;
 	}
-	
+		
 	public SubscriptionType getSubscriptionType() {
 		return subscription;
 	}

@@ -115,7 +115,7 @@ public class Session {
 	}
 
 	private int getMinutes(int timeInSeconds) {
-		double dMin = timeInSeconds / 60;
+		double dMin = (double) timeInSeconds / 60;
 		return (int) Math.ceil(dMin);
 	}
 

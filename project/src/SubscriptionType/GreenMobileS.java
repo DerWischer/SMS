@@ -1,5 +1,8 @@
 package SubscriptionType;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class GreenMobileS extends SubscriptionType {
 
 	@Override
