@@ -58,12 +58,16 @@ public class Subscriber {
 		return imsi;
 	}
 	
+	private void setIMSI(String imsi) {
+		this.imsi = imsi;
+	}
+	
 	@XmlAttribute
 	public TerminalType getTerminalType(){
 		return terminal;
 	}
 	
-	public void setTerminType(TerminalType type){
+	public void setTerminalType(TerminalType type){
 		this.terminal = type;
 	}
 		
