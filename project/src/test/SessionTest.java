@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import InformationProvider.Service.ServiceType;
 import InformationProvider.Signal.Signal;
+import InformationProvider.Signal.SignalQualityType;
 import InformationProvider.Terminal.TerminalType;
 import Subscriber.Subscriber;
 import Subscriber.SubscriberFactory;
@@ -56,7 +57,12 @@ public class SessionTest {
 
 	@Test
 	public void test_AvailableDataVolume() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.SoniZperiaX3, new GreenMobileL());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.Medium);
+		manager.simulateSession(s, ServiceType.AppDownload, 8);
+		assertEquals(avDataVolume - 80, s.getSubscriptionType().getDataVolumeInMBits());
 	}
 
 	@Test
