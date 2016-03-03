@@ -32,7 +32,6 @@ public class simulateDaysTest {
 
 	@After
 	public void teardown() {
-		format = null;
 		manager = null;
 		Signal.debug_UseRandomSignal();
 	}
