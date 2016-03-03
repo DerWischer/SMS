@@ -55,20 +55,16 @@ public class SubscriberManager {
 		String strSubscription = session.getSubscriptionType().toString();
 		String strTerminal = session.getUserTerminal().name();
 		String strTime = "" + session.getTimeInSecons();
-		String strSignal = "" + session.getSignal();
-
-		System.out.println("Vol " + subscriber.getSubscriptionType().getDataVolumeInMBits());
-		System.out.println("Free " + subscriber.getSubscriptionType().getFreeMinutes());
-		System.out.println("Used " + subscriber.getSubscriptionType().getUsedExtraMinutes());
-
+		String strSignal = "" + session.getSignal();		
 		SessionInformation sessionInfo = new SessionInformation(strName, strService, strSignal, strSubscription,
 				strTerminal, strTime, info);
+		
 		return sessionInfo;
 	}
 
 	public void simulateDays(int amountOfDays) {
 		// TODO validate amountOfDays and simulate
-		throw new NotImplementedException();
+		throw new NotImplementedException();			
 	}
 
 	public ArrayList<Invoice> invoiceAllSubscriber() {
