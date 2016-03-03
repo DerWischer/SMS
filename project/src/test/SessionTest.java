@@ -6,12 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import InformationProvider.Service.ServiceInformation;
 import InformationProvider.SessionInformation;
 import InformationProvider.Service.ServiceType;
 import InformationProvider.Signal.Signal;
-import InformationProvider.Signal.SignalQualityType;
-import InformationProvider.Terminal.TerminalInformation;
 import InformationProvider.Signal.SignalQualityType;
 import InformationProvider.Terminal.TerminalType;
 import Subscriber.Subscriber;
@@ -154,8 +151,7 @@ public class SessionTest {
 
 	@Test
 	public void test_OverMaxDataVolumeS() {
-		SubscriptionType subscription = new GreenMobileS();
-		int setavailableDataVolume=501*8;
+		SubscriptionType subscription = new GreenMobileS();		
 		int availableDataVolume=subscription.getDataVolumeInMBits();
 		assertEquals(4000, availableDataVolume);
 	}
