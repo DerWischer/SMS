@@ -59,7 +59,7 @@ public class SessionTest {
 
 	@Test
 	public void test_AvailableDataVolume() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.SoniZperiaX3, new GreenMobileL());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.SoniZperiaX3, new GreenMobileL(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.Medium);
@@ -69,7 +69,7 @@ public class SessionTest {
 
 	@Test
 	public void test_AvailableThroughput() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PearaPhone4s, new GreenMobileS());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PearaPhone4s, new GreenMobileS(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.Low);
@@ -79,7 +79,7 @@ public class SessionTest {
 
 	@Test
 	public void test_EqualThroughput() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.Low);
@@ -89,7 +89,7 @@ public class SessionTest {
 
 	@Test
 	public void test_NoSignal() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.NA);
@@ -102,7 +102,8 @@ public class SessionTest {
 	public void test_NoSessionTime() {
 		SubscriberManager manager = new SubscriberManager();
 		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", 
-				TerminalType.PearaPhone4s, new GreenMobileS()
+				TerminalType.PearaPhone4s, new GreenMobileS(),
+				manager.getDate()
 				);
 		manager.addSubscriber(s);
 		

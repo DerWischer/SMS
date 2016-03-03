@@ -16,17 +16,20 @@ public class runner {
 		
 		Subscriber s1 = SubscriberFactory.createSubsriber(
 				"Hans", "Schmidt", 
-				TerminalType.PhairPhone, new GreenMobileS()
+				TerminalType.PhairPhone, new GreenMobileS(),
+				manager.getDate()
 				);
 		
 		Subscriber s2 = SubscriberFactory.createSubsriber(
 				"Peter", "Schmidt", 
-				TerminalType.PhairPhone, new GreenMobileM()
+				TerminalType.PhairPhone, new GreenMobileM(),
+				manager.getDate()
 				);
 		
 		Subscriber s3 = SubscriberFactory.createSubsriber(
 				"Jürgen", "Schmidt", 
-				TerminalType.PhairPhone, new GreenMobileS()
+				TerminalType.PhairPhone, new GreenMobileS(),
+				manager.getDate()
 				);
 		
 		manager.addSubscriber(s1);

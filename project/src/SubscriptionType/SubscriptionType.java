@@ -25,6 +25,10 @@ public abstract class SubscriptionType {
 		return usedExtraMinutes;
 	}
 	
+	public double getBasicFee() {
+		return basicFee;
+	}
+	
 	public void consumeMinutes(int minutes){
 		freeMinutes -= minutes;
 		
