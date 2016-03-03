@@ -8,6 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import InformationProvider.SessionInformation;
 import InformationProvider.Service.ServiceType;
 import InformationProvider.Signal.Signal;
 import InformationProvider.Signal.SignalQualityType;
@@ -19,6 +20,7 @@ import SubscriptionType.GreenMobileM;
 import SubscriptionType.GreenMobileS;
 import SubscriptionType.SubscriptionType;
 import common.SubscriberManager;
+import exception.NoSignalException;
 
 public class SessionTest {
 
@@ -67,17 +69,33 @@ public class SessionTest {
 
 	@Test
 	public void test_AvailableThroughput() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PearaPhone4s, new GreenMobileS());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.Low);
+		manager.simulateSession(s, ServiceType.HDVideo, 8);
+		assertEquals(avDataVolume - 16, s.getSubscriptionType().getDataVolumeInMBits());
 	}
 
 	@Test
 	public void test_EqualThroughput() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.Low);
+		manager.simulateSession(s, ServiceType.Browsing, 8);
+		assertEquals(avDataVolume - 16, s.getSubscriptionType().getDataVolumeInMBits());
 	}
 
 	@Test
 	public void test_NoSignal() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.NA);
+		SessionInformation info = manager.simulateSession(s, ServiceType.Browsing, 1);
+		assertEquals(avDataVolume, s.getSubscriptionType().getDataVolumeInMBits());
+		assertEquals(info.getInfo(), new NoSignalException().getMessage());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
