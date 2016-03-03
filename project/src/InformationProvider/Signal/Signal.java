@@ -3,6 +3,9 @@ package InformationProvider.Signal;
 public class Signal {	
 	
 	static public SignalQualityType getSignalQuality() {
+		if (Signal.signal != null)
+			return Signal.signal;
+		
 		double r = Math.random();
 		SignalQualityType quality;
 		if (r < 0.25) {
@@ -15,6 +18,15 @@ public class Signal {
 			quality = SignalQualityType.Good;
 		}
 		return quality;
+	}
+	
+	private static SignalQualityType signal = null;
+	static public void debug_UseFixedSignal(SignalQualityType signal) {
+		Signal.signal = signal;
+	}
+	
+	static public void debug_UseRandomSignal() {
+		Signal.signal = null;
 	}
 	
 	static public double SignalQualityToFactor(SignalQualityType signalQuality) {
