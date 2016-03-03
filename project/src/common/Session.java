@@ -28,7 +28,10 @@ public class Session {
 	}
 
 	public void simulate(ServiceType service, int timeInSeconds)
-			throws NoSignalException, NoSupportedRanTechnologyException, NoDataVolumeException {
+			throws NoSignalException, NoSupportedRanTechnologyException, NoDataVolumeException, IllegalArgumentException {
+		if (timeInSeconds <= 0)
+			throw new IllegalArgumentException("Time must not be below 1 second");
+		
 		TerminalType terminal = subscriber.getTerminalType();
 		this.service = service;
 		this.signal = Signal.getSignalQuality();
