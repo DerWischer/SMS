@@ -24,11 +24,9 @@ import common.SubscriberManager;
 public class simulateDaysTest {
 
 	private SubscriberManager manager;
-	private SimpleDateFormat format;
 	
 	@Before
 	public void setup() {
-		format = new SimpleDateFormat("yyyy/MM/dd");
 		manager = new SubscriberManager();
 	}
 
