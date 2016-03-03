@@ -46,8 +46,11 @@ public abstract class SubscriptionType {
 	private void setUsedExtraMinutes(int min){
 		this.usedExtraMinutes = min;
 	}
+	
 	public double getBasicFee() {
 		return basicFee;
+	}
+	
 	public void consumeMinutes(int minutes){
 		freeMinutes -= minutes;
 		

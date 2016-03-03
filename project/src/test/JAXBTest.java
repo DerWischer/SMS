@@ -133,7 +133,8 @@ public class JAXBTest {
 		SubscriptionType s1_subscription = new GreenMobileS();
 		Subscriber s1 = SubscriberFactory.createSubsriber(
 				s1_Forename, s1_Surname, 
-				s1_terminal, s1_subscription);
+				s1_terminal, s1_subscription,
+				manager.getDate());
 		return s1;
 	}
 }

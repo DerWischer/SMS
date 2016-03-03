@@ -87,9 +87,7 @@ public class SubscriberManager {
 	}
 
 	public ArrayList<Invoice> simulateDays(int amountOfDays) {
-		// TODO validate amountOfDays and simulate
-
-		throw new NotImplementedException();	if(amountOfDays < 1){
+		if(amountOfDays < 1){
 			throw new IllegalArgumentException("The amount of simulated days has to be greater than 0.");
 		}
 
