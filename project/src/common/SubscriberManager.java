@@ -2,6 +2,9 @@ package common;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import InformationProvider.SessionInformation;
 import InformationProvider.Service.ServiceType;
 import Subscriber.Subscriber;
@@ -10,8 +13,10 @@ import exception.NoSignalException;
 import exception.NoSupportedRanTechnologyException;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+@XmlRootElement
 public class SubscriberManager {
-
+	
+	@XmlElement
 	private ArrayList<Subscriber> subscriberList;
 
 	public SubscriberManager() {
