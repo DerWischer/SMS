@@ -28,7 +28,10 @@ public class Session {
 	}
 
 	public void simulate(ServiceType service, int timeInSeconds)
-			throws NoSignalException, NoSupportedRanTechnologyException, NoDataVolumeException {
+			throws NoSignalException, NoSupportedRanTechnologyException, NoDataVolumeException, IllegalArgumentException {
+		if (timeInSeconds <= 0)
+			throw new IllegalArgumentException("Time must not be below 1 second");
+		
 		TerminalType terminal = subscriber.getTerminalType();
 		this.service = service;
 		this.signal = Signal.getSignalQuality();
@@ -60,10 +63,10 @@ public class Session {
 			ArrayList<RANTechnology> ranList = TerminalInformation.getSupportedRANTechnology(terminal);
 
 			RANTechnology usedRAN;
-			if (ranList.contains(RANTechnology.HSPA))
-				usedRAN = RANTechnology.HSPA;
-			else if (ranList.contains(RANTechnology.LTE))
+			if (ranList.contains(RANTechnology.LTE))
 				usedRAN = RANTechnology.LTE;
+			else if (ranList.contains(RANTechnology.HSPA))
+				usedRAN = RANTechnology.HSPA;
 			else 
 				throw new NoSupportedRanTechnologyException();				
 
@@ -112,7 +115,7 @@ public class Session {
 	}
 
 	private int getMinutes(int timeInSeconds) {
-		double dMin = timeInSeconds / 60;
+		double dMin = (double) timeInSeconds / 60;
 		return (int) Math.ceil(dMin);
 	}
 

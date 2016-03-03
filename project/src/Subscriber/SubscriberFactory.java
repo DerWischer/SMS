@@ -1,6 +1,5 @@
 package Subscriber;
 
-import java.security.InvalidParameterException;
 import java.util.Random;
 
 import InformationProvider.Terminal.TerminalType;
@@ -19,7 +18,7 @@ public class SubscriberFactory {
 	static public Subscriber createSubsriber(String forename, String surname, TerminalType terminal, SubscriptionType subscription) {
 		String imsi = generateIMSI();
 		if (forename.length() == 0 || surname.length() == 0 || surname == null || terminal == null) {
-			throw new InvalidParameterException();
+			throw new IllegalArgumentException();
 		}
 		return new Subscriber(forename, surname, imsi, terminal, subscription);		
 	}
