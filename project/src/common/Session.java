@@ -63,10 +63,10 @@ public class Session {
 			ArrayList<RANTechnology> ranList = TerminalInformation.getSupportedRANTechnology(terminal);
 
 			RANTechnology usedRAN;
-			if (ranList.contains(RANTechnology.HSPA))
-				usedRAN = RANTechnology.HSPA;
-			else if (ranList.contains(RANTechnology.LTE))
+			if (ranList.contains(RANTechnology.LTE))
 				usedRAN = RANTechnology.LTE;
+			else if (ranList.contains(RANTechnology.HSPA))
+				usedRAN = RANTechnology.HSPA;
 			else 
 				throw new NoSupportedRanTechnologyException();				
 

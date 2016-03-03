@@ -18,6 +18,7 @@ import SubscriptionType.GreenMobileM;
 import SubscriptionType.GreenMobileS;
 import SubscriptionType.SubscriptionType;
 import common.SubscriberManager;
+import exception.NoSignalException;
 
 public class SessionTest {
 
@@ -94,22 +95,43 @@ public class SessionTest {
 
 	@Test
 	public void test_AvailableDataVolume() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.SoniZperiaX3, new GreenMobileL());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.Medium);
+		manager.simulateSession(s, ServiceType.AppDownload, 8);
+		assertEquals(avDataVolume - 80, s.getSubscriptionType().getDataVolumeInMBits());
 	}
 
 	@Test
 	public void test_AvailableThroughput() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PearaPhone4s, new GreenMobileS());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.Low);
+		manager.simulateSession(s, ServiceType.HDVideo, 8);
+		assertEquals(avDataVolume - 16, s.getSubscriptionType().getDataVolumeInMBits());
 	}
 
 	@Test
 	public void test_EqualThroughput() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.Low);
+		manager.simulateSession(s, ServiceType.Browsing, 8);
+		assertEquals(avDataVolume - 16, s.getSubscriptionType().getDataVolumeInMBits());
 	}
 
 	@Test
 	public void test_NoSignal() {
-
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		manager.addSubscriber(s);
+		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
+		Signal.debug_UseFixedSignal(SignalQualityType.NA);
+		SessionInformation info = manager.simulateSession(s, ServiceType.Browsing, 1);
+		assertEquals(avDataVolume, s.getSubscriptionType().getDataVolumeInMBits());
+		assertEquals(info.getInfo(), new NoSignalException().getMessage());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
