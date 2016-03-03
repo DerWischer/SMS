@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import InformationProvider.Service.ServiceType;
+import InformationProvider.Signal.Signal;
 import InformationProvider.Terminal.TerminalType;
 import Subscriber.Subscriber;
 import Subscriber.SubscriberFactory;
@@ -20,14 +21,17 @@ import common.SubscriberManager;
 
 public class SessionTest {
 
+	private SubscriberManager manager;
+			
 	@Before
 	public void setup() {
-
+		manager = new SubscriberManager();
 	}
 
 	@After
 	public void teardown() {
-
+		manager = null;
+		Signal.debug_UseRandomSignal();
 	}
 
 	@Test
