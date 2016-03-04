@@ -26,7 +26,7 @@ public class AuthDialog extends JDialog {
 	private boolean wasClosed = false;
 	
 	public AuthDialog(){		
-		this.setTitle("Authentification");
+		this.setTitle("Authentication");
 		this.setModal(true);
 		this.setResizable(false);
 		
