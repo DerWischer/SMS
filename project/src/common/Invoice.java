@@ -1,5 +1,7 @@
 package common;
 
+import java.util.Date;
+
 import Subscriber.Subscriber;
 
 public class Invoice {
@@ -7,11 +9,13 @@ public class Invoice {
 	private final Subscriber subscriber;
 	private final int usedExtraMinutes;
 	private final double charges;
+	private final Date date;
 	
-	public Invoice(Subscriber subscriber, int usedExtraMintes, double charges){
+	public Invoice(Subscriber subscriber, int usedExtraMintes, double charges, Date date){
 		this.subscriber = subscriber;
 		this.usedExtraMinutes = usedExtraMintes;
 		this.charges = charges;
+		this.date = date;
 	}
 	
 	public String getSubscriberName(){
@@ -20,6 +24,10 @@ public class Invoice {
 	
 	public double getCharges() {
 		return charges;
+	}
+	
+	public Date getDate() {
+		return date;
 	}
 	
 	public int getUsedExtraMinutes() {

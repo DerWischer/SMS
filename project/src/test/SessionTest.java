@@ -38,7 +38,7 @@ public class SessionTest {
 	@Test
 	public void test_ExtraMinutes() {
 		SubscriptionType subscription = new GreenMobileS();
-		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription);
+		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription, manager.getDate());
 		
 		manager.addSubscriber(s);
 		manager.simulateSession(s, ServiceType.VoiceCall, 1);
@@ -51,7 +51,7 @@ public class SessionTest {
 	public void test_FreeMinutes1() {
 		SubscriptionType subscription = new GreenMobileM();
 		subscription.consumeMinutes(subscription.getFreeMinutes()-1);
-		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription);
+		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription, manager.getDate());
 		
 		manager.addSubscriber(s);
 		manager.simulateSession(s, ServiceType.VoiceCall, 1);
@@ -66,7 +66,7 @@ public class SessionTest {
 	@Test
 	public void test_FreeMinutes2() {
 		SubscriptionType subscription = new GreenMobileM();
-		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription);		
+		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription, manager.getDate());		
 
 		manager.addSubscriber(s);
 		manager.simulateSession(s, ServiceType.VoiceCall, 1);
@@ -82,7 +82,7 @@ public class SessionTest {
 		SubscriptionType subscription = new GreenMobileM();
 		subscription.consumeDataVolume(subscription.getDataVolumeInMBits());
 		
-		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription);
+		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s, subscription, manager.getDate());
 		
 		Signal.debug_UseFixedSignal(SignalQualityType.Good);
 		
@@ -95,7 +95,7 @@ public class SessionTest {
 
 	@Test
 	public void test_AvailableDataVolume() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.SoniZperiaX3, new GreenMobileL());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.SoniZperiaX3, new GreenMobileL(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.Medium);
@@ -105,7 +105,7 @@ public class SessionTest {
 
 	@Test
 	public void test_AvailableThroughput() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PearaPhone4s, new GreenMobileS());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PearaPhone4s, new GreenMobileS(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.Low);
@@ -115,7 +115,7 @@ public class SessionTest {
 
 	@Test
 	public void test_EqualThroughput() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.Low);
@@ -125,7 +125,7 @@ public class SessionTest {
 
 	@Test
 	public void test_NoSignal() {
-		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut", TerminalType.PhairPhone, new GreenMobileS(), manager.getDate());
 		manager.addSubscriber(s);
 		int avDataVolume = s.getSubscriptionType().getDataVolumeInMBits();
 		Signal.debug_UseFixedSignal(SignalQualityType.NA);
@@ -137,8 +137,10 @@ public class SessionTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void test_NoSessionTime() {
 		SubscriberManager manager = new SubscriberManager();
-		Subscriber s = SubscriberFactory.createSubsriber("Hans", "Schmidt", TerminalType.PearaPhone4s,
-				new GreenMobileS());
+		Subscriber s = SubscriberFactory.createSubsriber("Beathe", "Beispielbraut",
+				TerminalType.PearaPhone4s, new GreenMobileS(),
+				manager.getDate()
+				);
 		manager.addSubscriber(s);
 
 		manager.simulateSession(s, ServiceType.VoiceCall, 0);
