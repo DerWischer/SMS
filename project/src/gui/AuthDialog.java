@@ -69,8 +69,11 @@ public class AuthDialog extends JDialog {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String text = tfPassword.getText();
-			isAuthenticated = text.equals(PASSWORD);
+			isAuthenticated = text.equals(PASSWORD);		
 			tfPassword.setText("");
+			
+			if (isAuthenticated)
+				AuthDialog.this.dispose();
 		}
 	};  
 }
