@@ -3,6 +3,8 @@ package gui;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -21,6 +23,7 @@ public class AuthDialog extends JDialog {
 	
 	private final String PASSWORD = "adm!n";
 	private boolean isAuthenticated = false;
+	private boolean wasClosed = false;
 	
 	public AuthDialog(){		
 		this.setTitle("Authentification");
@@ -33,11 +36,15 @@ public class AuthDialog extends JDialog {
 				
 		int height = 150;
 		int width = 250;
-		this.setSize(width, height);
+		this.setSize(width, height);	
 	}
 	
 	public boolean isAuthenticated(){
 		return isAuthenticated;
+	}
+	
+	public boolean wasClosed() {
+		return wasClosed;
 	}
 	
 	private JPanel createPanel() {
@@ -63,7 +70,7 @@ public class AuthDialog extends JDialog {
 		public void actionPerformed(ActionEvent e) {
 			String text = tfPassword.getText();
 			isAuthenticated = text.equals(PASSWORD);
-			AuthDialog.this.dispose();
+			tfPassword.setText("");
 		}
 	};  
 }

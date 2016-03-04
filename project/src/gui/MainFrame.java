@@ -1,12 +1,30 @@
 package gui;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-import java.text.*;
-import javax.swing.*;
-import common.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import Subscriber.Subscriber;
+import common.Invoice;
+import common.JAXBHandler;
+import common.SubscriberManager;
 
 public class MainFrame {
 
@@ -215,8 +233,10 @@ public class MainFrame {
 
 	public static void main(String[] args) {
 		AuthDialog authDlg = new AuthDialog();
-		if (authDlg.isAuthenticated()) {
+		
+		if (authDlg.isAuthenticated()){
 			MainFrame mf = new MainFrame();
-		}
+		} 
+		
 	}
 }

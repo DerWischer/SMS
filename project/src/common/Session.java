@@ -21,7 +21,8 @@ public class Session {
 	private int time;
 	private Subscriber subscriber;
 	private SignalQualityType signal;
-
+	private int usedDataVolumeInMBits = 0;
+	
 	public Session(Subscriber subscriber) {
 		this.subscriber = subscriber;
 		time = -1;
@@ -79,6 +80,7 @@ public class Session {
 			// determine volume
 			int availableVolume = subscription.getDataVolumeInMBits();
 			int consumedVolume = (int) (actualThroughput * timeInSeconds);
+			setUsedDataVolumeInMBits(consumedVolume);
 
 			if (availableVolume == 0) {
 				time = 0;
@@ -141,5 +143,13 @@ public class Session {
 	
 	public SignalQualityType getSignal() {
 		return signal;
+	}
+
+	public int getUsedDataVolumeInMBits() {
+		return usedDataVolumeInMBits;
+	}
+
+	private void setUsedDataVolumeInMBits(int usedDataVolumeInMBits) {
+		this.usedDataVolumeInMBits = usedDataVolumeInMBits;
 	}
 }

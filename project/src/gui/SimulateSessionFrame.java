@@ -1,14 +1,24 @@
 package gui;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
-import javax.swing.*;
-import common.SubscriberManager;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import InformationProvider.SessionInformation;
 import InformationProvider.Service.ServiceType;
 import Subscriber.Subscriber;
+import common.SubscriberManager;
 
 public class SimulateSessionFrame {
 
@@ -29,7 +39,7 @@ public class SimulateSessionFrame {
 		panelOuter = new JPanel(new BorderLayout());
 		panelCenter = new JPanel(new GridLayout(2, 2));
 		panelBottom = new JPanel(new FlowLayout());
-		comboBoxServices = new JComboBox<>(ServiceType.values());
+		comboBoxServices = new JComboBox<ServiceType>(ServiceType.values());
 		textFieldTime = new JTextField();
 		labelService = new JLabel("Service: ");
 		labelTime = new JLabel("Time in Seconds: ");

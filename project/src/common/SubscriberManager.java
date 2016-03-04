@@ -12,14 +12,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import InformationProvider.SessionInformation;
 import InformationProvider.Service.ServiceType;
-import InformationProvider.Terminal.TerminalType;
 import Subscriber.Subscriber;
-import Subscriber.SubscriberFactory;
-import SubscriptionType.GreenMobileL;
 import exception.NoDataVolumeException;
 import exception.NoSignalException;
 import exception.NoSupportedRanTechnologyException;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 @XmlRootElement
 public class SubscriberManager {
@@ -31,7 +27,7 @@ public class SubscriberManager {
 
 	public SubscriberManager() {
 		if(subscriberList == null)
-			subscriberList = new ArrayList<>();
+			subscriberList = new ArrayList<Subscriber>();
 		if(date == null){
 			SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 			try {
@@ -77,7 +73,11 @@ public class SubscriberManager {
 		String info = "";
 		try {
 			session.simulate(service, timeInSeconds);
-		} catch (NoSignalException | NoSupportedRanTechnologyException | NoDataVolumeException e) {
+		} catch (NoSignalException e){
+			info = e.getMessage();
+		} catch (NoSupportedRanTechnologyException e){
+			info = e.getMessage();
+		} catch (NoDataVolumeException e){
 			info = e.getMessage();
 		} catch (IllegalArgumentException e) {
 			throw e;
@@ -88,9 +88,10 @@ public class SubscriberManager {
 		String strSubscription = session.getSubscriptionType().toString();
 		String strTerminal = session.getUserTerminal().name();
 		String strTime = "" + session.getTimeInSecons();
-		String strSignal = "" + session.getSignal();		
+		String strSignal = "" + session.getSignal();	
+		String vol = "" + session.getUsedDataVolumeInMBits();
 		SessionInformation sessionInfo = new SessionInformation(strName, strService, strSignal, strSubscription,
-				strTerminal, strTime, info);
+				strTerminal, strTime, info, vol);
 		
 		return sessionInfo;
 	}
@@ -100,7 +101,7 @@ public class SubscriberManager {
 			throw new IllegalArgumentException("The amount of simulated days has to be greater than 0.");
 		}
 
-		ArrayList<Invoice> invoiceArr = new ArrayList<>();
+		ArrayList<Invoice> invoiceArr = new ArrayList<Invoice>();
 		
 		for(int i = 0; i<amountOfDays; i++){
 			Calendar c = Calendar.getInstance();
@@ -123,7 +124,7 @@ public class SubscriberManager {
 		return invoiceArr;	}
 
 	public ArrayList<Invoice> invoiceAllSubscriber(Date date) {
-		ArrayList<Invoice> invoiceList = new ArrayList<>();
+		ArrayList<Invoice> invoiceList = new ArrayList<Invoice>();
 		for (Subscriber tmp : subscriberList) {
 			invoiceList.add(tmp.invoice(date));
 		}

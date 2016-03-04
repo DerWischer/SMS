@@ -2,10 +2,10 @@ package InformationProvider;
 
 public class SessionInformation {
 
-	private final String username, service, signal, subscription, terminal, time, info;
+	private final String username, service, signal, subscription, terminal, time, info, volumeInMBit;
 
 	public SessionInformation(String username, String service, String signal, String subscription, String terminal, String time,
-			String info) {
+			String info, String volume) {
 		this.username = username;
 		this.service = service;
 		this.signal = signal;
@@ -13,6 +13,7 @@ public class SessionInformation {
 		this.terminal = terminal;
 		this.time = time;
 		this.info = info;
+		this.volumeInMBit = volume;
 	}
 
 	public String getUsername() {
