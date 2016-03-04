@@ -44,9 +44,8 @@ public class AddSubscriberFrame extends JDialog {
 		panelOuter = new JPanel(new BorderLayout());
 		panelCenter = new JPanel(new GridLayout(4, 2));
 		panelBottom = new JPanel(new FlowLayout());
-		comboBoxTerminal = new JComboBox<>(TerminalType.values());
-		comboBoxSubscription = new JComboBox<>(new String[] { "GreenMobil S",
-				"GreenMobil M", "GreenMobil L" });
+		comboBoxTerminal = new JComboBox<TerminalType>(TerminalType.values());
+		comboBoxSubscription = new JComboBox<String>(new String[] { "GreenMobil S", "GreenMobil M", "GreenMobil L" });
 		textFieldForname = new JTextField("");
 		textFieldSurname = new JTextField("");
 		labelTerminal = new JLabel("Terminal: ");
@@ -60,7 +59,9 @@ public class AddSubscriberFrame extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (!textFieldForname.getText().equals("") && !textFieldSurname.getText().equals("") && comboBoxTerminal.getSelectedItem() != null && comboBoxSubscription.getSelectedItem() != null) {
+				if (!textFieldForname.getText().equals("") && !textFieldSurname.getText().equals("")
+						&& comboBoxTerminal.getSelectedItem() != null && comboBoxSubscription.getSelectedItem() != null
+						&& isStringValid(textFieldForname.getText()) && isStringValid(textFieldSurname.getText())) {
 					SubscriptionType subscription = null;
 					switch (comboBoxSubscription.getSelectedIndex()) {
 					case 0:
@@ -73,16 +74,17 @@ public class AddSubscriberFrame extends JDialog {
 						subscription = new GreenMobileL();
 						break;
 					}
-					Subscriber s = SubscriberFactory.createSubsriber(textFieldForname.getText(), textFieldSurname.getText(),(TerminalType) comboBoxTerminal.getSelectedItem(),	subscription, manager.getDate());
+					Subscriber s = SubscriberFactory.createSubsriber(textFieldForname.getText().trim(),
+							textFieldSurname.getText().trim(), (TerminalType) comboBoxTerminal.getSelectedItem(), subscription,
+							manager.getDate());
 					manager.addSubscriber(s);
 					AddSubscriberFrame.this.dispose();
-				}
-				else {
-					new WarningFrame("Please enter data into all fields before adding this subscriber.");
+				} else {
+					new WarningFrame("Please enter valid data into all fields before adding this subscriber.");
 				}
 			}
 		});
-		
+
 		buttonCancel.addActionListener(new ActionListener() {
 
 			@Override
@@ -105,18 +107,34 @@ public class AddSubscriberFrame extends JDialog {
 
 		panelOuter.add(panelCenter, BorderLayout.CENTER);
 		panelOuter.add(panelBottom, BorderLayout.SOUTH);
-		
+
 		this.add(panelOuter);
 		this.pack();
 		int height = this.getHeight() * 2;
 		int width = this.getWidth() * 2;
 		this.setSize(width, height);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height	/ 2 - this.getSize().height / 2);
-		
+		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+
 		this.setTitle("Add Subscriber");
 		this.setModal(true);
 		this.setVisible(true);
+	}
+
+	private boolean isStringValid(String test) {
+		boolean onlyLetter = true;
 		
+		if (test.trim().length() == 0)
+			return false;
+		
+		for (int i = 0; i < test.length(); i++) {
+			Character tmp = test.charAt(i);
+			if (!Character.isAlphabetic(tmp) && !Character.isWhitespace(tmp)) {
+
+				onlyLetter = false;
+				break;
+			}
+		}
+		return onlyLetter;
 	}
 }
