@@ -16,7 +16,6 @@ public class Subscriber {
 	private TerminalType terminal;
 	@XmlElement
 	private SubscriptionType subscription;
-	@XmlAttribute
 	private Date subscriptionDate;
 	
 	Subscriber(String forename, String surname, String imsi, TerminalType terminal, SubscriptionType subscription, Date subscriptionDate){
@@ -30,6 +29,15 @@ public class Subscriber {
 	
 	public Subscriber() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	@XmlAttribute
+	public Date getSubscriptionDate(){
+		return subscriptionDate;
+	}
+	
+	private void setSubscriptionDate(Date date){
+		this.subscriptionDate = date;
 	}
 	
 	@XmlAttribute

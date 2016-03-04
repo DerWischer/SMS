@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Date;
 
 import org.junit.After;
 import org.junit.Before;
@@ -124,6 +125,26 @@ public class JAXBTest {
 		assertEquals(bFreeMinutes, aFreeMinutes);
 		assertEquals(bExtraMinutes, aExtraMinutes);
 		assertEquals(bVolume, aVolume);
+	}
+	
+	@Test 
+	public void test_DateContained() {
+		deleteSaveFile();
+		manager = handler.unmarshall();
+		
+		manager.simulateDays(3);
+		Subscriber bSub = createSubscriberS();
+		manager.addSubscriber(bSub);
+		Date bDate = bSub.getSubscriptionDate();
+		
+		handler.marshall(manager);
+		manager = null;
+		manager = handler.unmarshall();
+		
+		Subscriber aSub = manager.getSubscriber(0);
+		Date aDate = aSub.getSubscriptionDate();
+		
+		assertEquals(bDate.toString(), aDate.toString());
 	}
 	
 	private Subscriber createSubscriberS(){
