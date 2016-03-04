@@ -83,6 +83,6 @@ public abstract class SubscriptionType {
 	
 	@Override
 	public String toString() {		
-		return getClass().getName();
+		return getClass().getSimpleName();
 	}
 }

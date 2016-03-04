@@ -52,11 +52,17 @@ public class JAXBHandler {
 		return System.getenv("APPDATA") + "\\SMS\\" + SAVE_FILE_NAME;
 	}
 
-	private void initSaveFile() {
+	private void initSaveFile() {		
 		saveFile = new File(pathToSaveFile);
 		
+		File parent = saveFile.getParentFile();
+		if (!parent.exists()){
+			parent.mkdirs();
+		}
+		
 		if (!saveFile.exists())
-			try {				
+			try {			
+				
 				saveFile.createNewFile();				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -78,7 +84,8 @@ public class JAXBHandler {
 		if (saveFile.exists()) {
 			try {
 				decrypt();
-				manager = (SubscriberManager) um.unmarshal(saveFile);				
+				manager = (SubscriberManager) um.unmarshal(saveFile);
+				encrypt();
 			} catch (JAXBException e) {
 				return manager;
 			}

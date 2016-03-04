@@ -32,6 +32,15 @@ public class Subscriber {
 	}
 	
 	@XmlAttribute
+	public Date getSubscriptionDate(){
+		return subscriptionDate;
+	}
+	
+	private void setSubscriptionDate(Date date){
+		this.subscriptionDate = date;
+	}
+	
+	@XmlAttribute
 	public String getForename() {
 		return forename;
 	}
