@@ -13,7 +13,7 @@ public class SubscriberFactory {
 	
 	private static String generateIMSI() {	
 		long number = (long) Math.floor(r.nextDouble() * 9000000000L) + 1000000000L;
-		return "" + number;		
+		return "" + "262" + "12" + number;		
 	}
 	
 	static public Subscriber createSubsriber(String forename, String surname, TerminalType terminal, SubscriptionType subscription, Date subscriptionDate) {
