@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -56,8 +57,13 @@ public class SubscriberManager {
 			return subscriberList.get(index);
 	}
 	
+	@XmlAttribute
 	public Date getDate(){
 		return date;
+	}
+	
+	private void setDate(Date date){
+		this.date = date;
 	}
 
 	public void removeSubscriber(Subscriber subscriber) {

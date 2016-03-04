@@ -16,6 +16,7 @@ public class Subscriber {
 	private TerminalType terminal;
 	@XmlElement
 	private SubscriptionType subscription;
+	@XmlAttribute
 	private Date subscriptionDate;
 	
 	Subscriber(String forename, String surname, String imsi, TerminalType terminal, SubscriptionType subscription, Date subscriptionDate){
