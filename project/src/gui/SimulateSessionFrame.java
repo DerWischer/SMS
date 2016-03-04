@@ -48,7 +48,7 @@ public class SimulateSessionFrame {
 						new SessionFrame(info);
 						frame.dispose();
 					}
-					catch (NumberFormatException exception){
+					catch (Exception exception){
 						new WarningFrame("Invalid input for time. Please enter time in seconds.");
 					}
 				}

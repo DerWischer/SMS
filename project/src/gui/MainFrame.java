@@ -11,6 +11,7 @@ import java.util.Arrays;
 import javax.swing.*;
 
 import common.Invoice;
+import common.JAXBHandler;
 import common.SubscriberManager;
 import Subscriber.Subscriber;
 import sun.security.krb5.internal.PAEncTSEnc;
@@ -36,9 +37,11 @@ public class MainFrame {
 	
 	protected Subscriber current;
 	protected SubscriberManager manager;
+	protected JAXBHandler jaxb;
 	
 	public MainFrame() {
-		manager = new SubscriberManager();
+		jaxb = new JAXBHandler();
+		manager = jaxb.unmarshall();
 		
 		frame = new JFrame("Main Frame");
 		panelOuter = new JPanel(new BorderLayout());
@@ -53,11 +56,12 @@ public class MainFrame {
 		panelDetail = new JPanel();
 		panelDetail.setLayout(new BoxLayout(panelDetail, BoxLayout.Y_AXIS));
 		textfieldDays = new JTextField("Days");
-		labelDays = new JLabel("01-01-2016");
+		labelDays = new JLabel(manager.getDate().toString());
 		
 		initialiseButtons();
 		putComponentsTogether();		
 		repaintList();
+		
 		
 		frame.pack();
 		int height = frame.getHeight() * 2;
@@ -91,6 +95,8 @@ public class MainFrame {
 					new InvoiceFrame(invoice);
 					repaintList();
 					panelDetail.removeAll();
+					panelDetail.setVisible(false);
+					panelDetail.setVisible(true);
 				}
 				else {
 					new WarningFrame("Please choose a subscriber you want to remove.");
@@ -116,7 +122,19 @@ public class MainFrame {
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				if (!textfieldDays.getText().equals("")) {
+					try {
+						int days = Integer.parseInt(textfieldDays.getText());
+						ArrayList<Invoice> invoices = manager.simulateDays(days);
+						for (Invoice in :invoices) {
+							new InvoiceFrame(in);
+						}	
+					}
+					catch (Exception exception) {
+						new WarningFrame("Please enter a valid amount of days.");
+					}
+				}
+				
 		
 			}
 		});

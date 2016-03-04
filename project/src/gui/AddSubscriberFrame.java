@@ -65,7 +65,7 @@ public class AddSubscriberFrame extends JDialog {
 						subscription = new GreenMobileL();
 						break;
 					}
-					Subscriber s = SubscriberFactory.createSubsriber(textFieldForname.getText(), textFieldSurname.getText(),(TerminalType) comboBoxTerminal.getSelectedItem(),	subscription);
+					Subscriber s = SubscriberFactory.createSubsriber(textFieldForname.getText(), textFieldSurname.getText(),(TerminalType) comboBoxTerminal.getSelectedItem(),	subscription, manager.getDate());
 					manager.addSubscriber(s);
 					AddSubscriberFrame.this.dispose();
 				}
