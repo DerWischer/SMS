@@ -30,7 +30,7 @@ public class SimulateSessionFrame {
 		panelCenter = new JPanel(new GridLayout(2, 2));
 		panelBottom = new JPanel(new FlowLayout());
 		comboBoxServices = new JComboBox<>(ServiceType.values());
-		textFieldTime = new JFormattedTextField(NumberFormat.getInstance());
+		textFieldTime = new JTextField();
 		labelService = new JLabel("Service: ");
 		labelTime = new JLabel("Time in Seconds: ");
 		labelInfo = new JLabel("You are simulating a session for"+" "+":");

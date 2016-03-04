@@ -1,20 +1,12 @@
 package gui;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Arrays;
-
+import java.awt.event.*;
+import java.util.*;
+import java.text.*;
 import javax.swing.*;
-
-import common.Invoice;
-import common.JAXBHandler;
-import common.SubscriberManager;
+import common.*;
 import Subscriber.Subscriber;
-import sun.security.krb5.internal.PAEncTSEnc;
 
 public class MainFrame {
 
@@ -56,17 +48,24 @@ public class MainFrame {
 		panelDetail = new JPanel();
 		panelDetail.setLayout(new BoxLayout(panelDetail, BoxLayout.Y_AXIS));
 		textfieldDays = new JTextField("Days");
-		labelDays = new JLabel(manager.getDate().toString());
+		labelDays = new JLabel(formateDate(manager.getDate()));
 		
 		initialiseButtons();
 		putComponentsTogether();		
 		repaintList();
 		
-		
+		frame.addWindowListener(new java.awt.event.WindowAdapter() {
+		    @Override
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		        jaxb.marshall(manager);
+		    }
+		});
+		packFrame();
+	}
+	
+	private void packFrame() {
 		frame.pack();
-		int height = frame.getHeight() * 2;
-		int width = frame.getWidth() * 2;
-		frame.setSize(width, height);
+		frame.setSize(frame.getWidth()+20, frame.getHeight());
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		frame.setLocation(dim.width / 2 - frame.getSize().width / 2, dim.height	/ 2 - frame.getSize().height / 2);
 		frame.setVisible(true);
@@ -84,6 +83,7 @@ public class MainFrame {
 			public void actionPerformed(ActionEvent e) {
 				new AddSubscriberFrame(manager);
 				repaintList();
+				packFrame();
 			}
 		});
 		buttonRemove.addActionListener(new ActionListener() {
@@ -97,11 +97,11 @@ public class MainFrame {
 					panelDetail.removeAll();
 					panelDetail.setVisible(false);
 					panelDetail.setVisible(true);
+					packFrame();
 				}
 				else {
 					new WarningFrame("Please choose a subscriber you want to remove.");
 				}
-				
 			}
 		});
 		buttonSession.addActionListener(new ActionListener() {
@@ -128,7 +128,9 @@ public class MainFrame {
 						ArrayList<Invoice> invoices = manager.simulateDays(days);
 						for (Invoice in :invoices) {
 							new InvoiceFrame(in);
-						}	
+						}
+						textfieldDays.setText("Days");
+						labelDays.setText(formateDate(manager.getDate()));
 					}
 					catch (Exception exception) {
 						new WarningFrame("Please enter a valid amount of days.");
@@ -138,6 +140,12 @@ public class MainFrame {
 		
 			}
 		});
+	}
+	
+	protected String formateDate(Date date) {  
+		DateFormat df = new SimpleDateFormat("DD-MM-yyyy");
+		String result = df.format(date);
+		return result;
 	}
 	
 	private void putComponentsTogether() {
@@ -153,10 +161,7 @@ public class MainFrame {
 		panelOuterNorth.add(textfieldDays);
 		panelOuterNorth.add(buttonDays);
 		panelOuterNorth.add(labelDays);
-		
-		//panelOuterCenter.add(panelListOuter);
-		//panelOuterCenter.add(panelDetail);
-		//panelOuter.add(panelOuterCenter, BorderLayout.CENTER);
+
 		panelOuter.add(panelListOuter, BorderLayout.WEST);
 		panelOuter.add(panelDetailOuter, BorderLayout.CENTER);
 		panelOuter.add(panelOuterNorth, BorderLayout.NORTH);
@@ -196,15 +201,19 @@ public class MainFrame {
 		panelDetail.removeAll();
 		current = manager.getSubscriber(index/2);
 		JLabel name = new JLabel("Name: " + current.getFullName());
+		JLabel imsi = new JLabel("IMSI: "+ current.getIMSI());
 		JLabel terminal = new JLabel("Terminal: " + current.getTerminalType().toString());
 		JLabel subscription = new JLabel("Subscription: "+ current.getSubscriptionType());
 		panelDetail.add(name);
+		panelDetail.add(new JLabel(" "));
+		panelDetail.add(imsi);
 		panelDetail.add(new JLabel(" "));
 		panelDetail.add(terminal);
 		panelDetail.add(new JLabel(" "));
 		panelDetail.add(subscription);
 		panelDetail.setVisible(false);
 		panelDetail.setVisible(true);
+		packFrame();
 	}
 	
 	public static void main(String[] args) {
