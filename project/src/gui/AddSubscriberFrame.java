@@ -8,13 +8,21 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-import common.SubscriberManager;
 import InformationProvider.Terminal.TerminalType;
 import Subscriber.Subscriber;
 import Subscriber.SubscriberFactory;
-import SubscriptionType.*;
+import SubscriptionType.GreenMobileL;
+import SubscriptionType.GreenMobileM;
+import SubscriptionType.GreenMobileS;
+import SubscriptionType.SubscriptionType;
+import common.SubscriberManager;
 
 public class AddSubscriberFrame extends JDialog {
 
