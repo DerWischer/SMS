@@ -123,8 +123,8 @@ public class AddSubscriberFrame extends JDialog {
 
 	private boolean isStringValid(String test) {
 		boolean onlyLetter = true;
-		
-		if (test.trim().length() == 0)
+		test = test.trim();
+		if (test.length() == 0 || test.length() > 30)
 			return false;
 		
 		for (int i = 0; i < test.length(); i++) {
