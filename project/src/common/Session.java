@@ -98,6 +98,11 @@ public class Session {
 
 	private void simulateVoiceCall(TerminalType terminal, int timeInSeconds)
 			throws NoSignalException, NoSupportedRanTechnologyException {
+		if (signal == SignalQualityType.NA) {
+			time = 0;
+			throw new NoSignalException();
+		}
+		
 		ArrayList<RANTechnology> ranList = TerminalInformation.getSupportedRANTechnology(terminal);
 
 		RANTechnology usedTechnology = null;
