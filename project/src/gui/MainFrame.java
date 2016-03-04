@@ -157,7 +157,7 @@ public class MainFrame {
 	}
 
 	protected String formateDate(Date date) {  
-		DateFormat df = new SimpleDateFormat("DD-MM-yyyy");
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 		String result = df.format(date);
 		return result;
 	}

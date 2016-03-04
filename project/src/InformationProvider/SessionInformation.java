@@ -58,5 +58,9 @@ public class SessionInformation {
 
 		return res;
 	}
+
+	public String getVolumeInMBit() {
+		return volumeInMBit;
+	}
 	
 }

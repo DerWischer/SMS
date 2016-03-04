@@ -26,6 +26,7 @@ public class SessionFrame {
 	protected JLabel labelSubscription;
 	protected JLabel labelTerminal;
 	protected JLabel labelTime;
+	protected JLabel labelDataVolume;
 	protected JLabel labelInfo;
 	protected JButton buttonOK;
 
@@ -42,6 +43,7 @@ public class SessionFrame {
 		labelSubscription = new JLabel("Subscription booked: "+info.getSubscription());
 		labelTerminal = new JLabel("Terminal used: "+info.getTerminal());
 		labelTime = new JLabel("Time in Sec: "+info.getTime());
+		labelDataVolume = new JLabel("Data Volume used in MBit/s: "+info.getVolumeInMBit());
 		labelInfo = new JLabel("Additional Information: "+info.getInfo());
 		buttonOK = new JButton("OK");
 		
@@ -64,6 +66,8 @@ public class SessionFrame {
 		panelCenter.add(labelTerminal);
 		panelCenter.add(new JLabel(" "));
 		panelCenter.add(labelTime);
+		panelCenter.add(new JLabel(" "));
+		panelCenter.add(labelDataVolume);
 		panelCenter.add(new JLabel(" "));
 		panelCenter.add(labelInfo);
 		
